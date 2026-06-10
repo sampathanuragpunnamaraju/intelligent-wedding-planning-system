@@ -4,10 +4,10 @@ Current Phase:
 Spring Boot Backend Development
 
 Current Task:
-Backend foundation scaffold complete (F1.1-F1.3)
+Database foundation configuration complete (D2.1-D2.3)
 
 Next Task:
-Create development and test configuration profiles (F1.4)
+Confirm GeneratedPlan regeneration semantics (D2.4)
 
 Important Notes:
 - Wedding only
@@ -16,4 +16,9 @@ Important Notes:
 - Backend uses Java 21, Maven, and Spring Boot 4.0.6
 - Base package is com.eventmanagement
 - Foundation dependencies and requested package structure are present
+- MySQL uses DB_URL, DB_USERNAME, and DB_PASSWORD environment variables
+- Flyway migrations belong in Backend/src/main/resources/db/migration
+- Flyway owns schema changes and Hibernate uses validation only
+- Database conventions are documented in Docs/Database-Conventions.md
+- No SQL migrations or database tables have been created
 - No entities, repositories, controllers, security configuration, or authentication logic have been implemented

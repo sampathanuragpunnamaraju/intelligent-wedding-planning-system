@@ -35,6 +35,9 @@
 * F1.1 Maven Spring Boot project generated
 * F1.2 Backend foundation dependencies added
 * F1.3 Base package structure created
+* D2.1 MySQL connectivity configured through environment variables
+* D2.2 Flyway migration support configured
+* D2.3 Database conventions defined
 
 ---
 
@@ -46,7 +49,7 @@ Spring Boot Backend Development
 
 ## Current Task
 
-Backend foundation scaffold complete (F1.1-F1.3)
+Database foundation configuration complete (D2.1-D2.3)
 
 ---
 
@@ -55,7 +58,10 @@ Backend foundation scaffold complete (F1.1-F1.3)
 * Create development and test configuration profiles (F1.4)
 * Externalize database credentials and API keys (F1.5)
 * Add application startup and context-load verification (F1.6)
-* Configure MySQL
+* Confirm GeneratedPlan regeneration semantics (D2.4)
+* Confirm AI recommendation storage (D2.5)
+* Create the initial schema migration (D2.6)
+* Verify migrations against a clean MySQL database (D2.7)
 * Create User Entity
 * Create WeddingEvent Entity
 * Create GeneratedPlan Entity

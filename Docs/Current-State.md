@@ -14,7 +14,7 @@ Spring Boot Backend Development
 
 ## Current Task
 
-Backend foundation scaffold complete (F1.1-F1.3).
+Database foundation configuration complete (D2.1-D2.3).
 
 ---
 
@@ -33,12 +33,15 @@ Backend foundation scaffold complete (F1.1-F1.3).
 * F1.1 Maven Spring Boot project generated
 * F1.2 Backend foundation dependencies added
 * F1.3 Base package structure created
+* D2.1 MySQL connectivity configured through environment variables
+* D2.2 Flyway migration support configured
+* D2.3 Database conventions defined
 
 ---
 
 ## Next Task
 
-Create development and test configuration profiles (F1.4).
+Confirm GeneratedPlan regeneration semantics (D2.4).
 
 ---
 
@@ -50,6 +53,17 @@ Create development and test configuration profiles (F1.4).
 * Base package: `com.eventmanagement`
 * Packages: `config`, `controller`, `dto`, `entity`, `repository`, `service`, `security`, `exception`, `util`
 * No entities, repositories, controllers, or authentication implementation created
+
+---
+
+## Database Foundation
+
+* MySQL connection variables: `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`
+* Flyway migration location: `classpath:db/migration`
+* Flyway owns schema changes
+* Hibernate validates the schema and does not create or update it
+* Database conventions are documented in `Docs/Database-Conventions.md`
+* No SQL migrations or database tables have been created
 
 ---
 
