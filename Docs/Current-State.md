@@ -14,7 +14,7 @@ Spring Boot Backend Development
 
 ## Current Task
 
-Backend foundation configuration complete (F1.1-F1.6) and initial database schema migration created (D2.1-D2.6).
+Initial JPA entity mappings created (P3.1-P3.5); clean MySQL migration verification remains pending (D2.7).
 
 ---
 
@@ -42,6 +42,11 @@ Backend foundation configuration complete (F1.1-F1.6) and initial database schem
 * D2.4 GeneratedPlan regeneration semantics confirmed: update the existing GeneratedPlan
 * D2.5 AI recommendation storage confirmed: store AI output inside GeneratedPlan
 * D2.6 Initial Flyway schema migration created
+* P3.1 User entity created
+* P3.2 WeddingEvent entity created
+* P3.3 GeneratedPlan entity created
+* P3.4 Entity relationships mapped
+* P3.5 Entity ownership mapping defined
 
 ---
 
@@ -61,7 +66,9 @@ Verify migrations against a clean MySQL database (D2.7).
 * Development profile: `application-dev.properties`
 * Test profile: `application-test.properties`
 * Minimal Spring Boot context-load test added with the `test` profile
-* No entities, repositories, controllers, or authentication implementation created
+* Entities created: `User`, `WeddingEvent`, `GeneratedPlan`
+* Wedding event status enum created: `WeddingEventStatus`
+* No repositories, controllers, services, DTOs, API endpoints, or authentication implementation created
 
 ---
 
@@ -76,6 +83,19 @@ Verify migrations against a clean MySQL database (D2.7).
 * Database conventions are documented in `Docs/Database-Conventions.md`
 * Initial schema defines `users`, `wedding_events`, and `generated_plans`
 * Clean MySQL migration verification is pending as D2.7
+* JPA mappings use the Flyway schema as the source of truth
+
+---
+
+## Entity Mapping
+
+* `User` maps to `users`
+* `WeddingEvent` maps to `wedding_events`
+* `GeneratedPlan` maps to `generated_plans`
+* Relationships use lazy loading
+* `GeneratedPlan` owns the one-to-one foreign key to `WeddingEvent`
+* JSON report columns use Hibernate JSON mapping with `Map<String, Object>`
+* Audit timestamps use `LocalDateTime`, `@CreationTimestamp`, and `@UpdateTimestamp`
 
 ---
 

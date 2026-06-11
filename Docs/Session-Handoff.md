@@ -4,7 +4,7 @@ Current Phase:
 Spring Boot Backend Development
 
 Current Task:
-Backend foundation configuration complete (F1.1-F1.6) and initial database schema migration created (D2.1-D2.6)
+Initial JPA entity mappings created (P3.1-P3.5); clean MySQL migration verification remains pending (D2.7)
 
 Next Task:
 Verify migrations against a clean MySQL database (D2.7)
@@ -24,7 +24,12 @@ Important Notes:
 - GeneratedPlan is one-to-one with WeddingEvent and is updated on regeneration
 - AI recommendations are stored inside GeneratedPlan, separate from rule-engine report JSON
 - Flyway owns schema changes and Hibernate uses validation only
+- Entities created: User, WeddingEvent, GeneratedPlan, and WeddingEventStatus
+- Entity relationships are lazy by default
+- GeneratedPlan owns the wedding_event_id foreign key
+- JSON report fields use Hibernate JSON mapping with Map<String, Object>
+- Audit timestamps use LocalDateTime with CreationTimestamp and UpdateTimestamp
 - Minimal Spring Boot context-load verification exists under the test profile
 - Database conventions are documented in Docs/Database-Conventions.md
 - Clean MySQL migration verification is pending as D2.7
-- No entities, repositories, controllers, security configuration, or authentication logic have been implemented
+- No repositories, controllers, services, DTOs, API endpoints, security configuration, or authentication logic have been implemented
