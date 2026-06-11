@@ -14,7 +14,7 @@ Spring Boot Backend Development
 
 ## Current Task
 
-Initial JPA entity mappings created (P3.1-P3.5); clean MySQL migration verification remains pending (D2.7).
+Repositories and database-gated persistence integration tests added (P3.7); clean MySQL migration verification remains pending (D2.7).
 
 ---
 
@@ -47,6 +47,8 @@ Initial JPA entity mappings created (P3.1-P3.5); clean MySQL migration verificat
 * P3.3 GeneratedPlan entity created
 * P3.4 Entity relationships mapped
 * P3.5 Entity ownership mapping defined
+* P3.6 WeddingEventStatus lifecycle approved
+* P3.7 Repositories and persistence integration tests added
 
 ---
 
@@ -68,7 +70,8 @@ Verify migrations against a clean MySQL database (D2.7).
 * Minimal Spring Boot context-load test added with the `test` profile
 * Entities created: `User`, `WeddingEvent`, `GeneratedPlan`
 * Wedding event status enum created: `WeddingEventStatus`
-* No repositories, controllers, services, DTOs, API endpoints, or authentication implementation created
+* Repositories created: `UserRepository`, `WeddingEventRepository`, `GeneratedPlanRepository`
+* No controllers, services, DTOs, API endpoints, or authentication implementation created
 
 ---
 
@@ -96,6 +99,16 @@ Verify migrations against a clean MySQL database (D2.7).
 * `GeneratedPlan` owns the one-to-one foreign key to `WeddingEvent`
 * JSON report columns use Hibernate JSON mapping with `Map<String, Object>`
 * Audit timestamps use `LocalDateTime`, `@CreationTimestamp`, and `@UpdateTimestamp`
+
+---
+
+## Repository Layer
+
+* `UserRepository` supports user persistence and email lookup
+* `WeddingEventRepository` supports wedding event persistence and lookup by user
+* `GeneratedPlanRepository` supports generated plan persistence and lookup by wedding event
+* Persistence integration tests cover user persistence, event ownership, one-to-one plan mapping, status persistence, and JSON persistence
+* Persistence integration tests require `DB_URL`, `DB_USERNAME`, and `DB_PASSWORD`; they are skipped when those variables are not available
 
 ---
 

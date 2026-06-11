@@ -49,6 +49,8 @@
 * P3.3 GeneratedPlan entity created
 * P3.4 Entity relationships mapped
 * P3.5 Entity ownership mapping defined
+* P3.6 WeddingEventStatus lifecycle approved
+* P3.7 Repositories and persistence integration tests added
 
 ---
 
@@ -60,7 +62,7 @@ Spring Boot Backend Development
 
 ## Current Task
 
-Initial JPA entity mappings created (P3.1-P3.5); clean MySQL migration verification remains pending (D2.7)
+Repositories and database-gated persistence integration tests added (P3.7); clean MySQL migration verification remains pending (D2.7)
 
 ---
 

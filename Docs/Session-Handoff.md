@@ -4,7 +4,7 @@ Current Phase:
 Spring Boot Backend Development
 
 Current Task:
-Initial JPA entity mappings created (P3.1-P3.5); clean MySQL migration verification remains pending (D2.7)
+Repositories and database-gated persistence integration tests added (P3.7); clean MySQL migration verification remains pending (D2.7)
 
 Next Task:
 Verify migrations against a clean MySQL database (D2.7)
@@ -29,7 +29,11 @@ Important Notes:
 - GeneratedPlan owns the wedding_event_id foreign key
 - JSON report fields use Hibernate JSON mapping with Map<String, Object>
 - Audit timestamps use LocalDateTime with CreationTimestamp and UpdateTimestamp
+- WeddingEventStatus lifecycle has been approved
+- Repositories created: UserRepository, WeddingEventRepository, and GeneratedPlanRepository
+- Persistence integration tests cover repository persistence, relationships, status persistence, and JSON persistence
+- Persistence integration tests require DB_URL, DB_USERNAME, and DB_PASSWORD; they are skipped when those variables are unavailable
 - Minimal Spring Boot context-load verification exists under the test profile
 - Database conventions are documented in Docs/Database-Conventions.md
 - Clean MySQL migration verification is pending as D2.7
-- No repositories, controllers, services, DTOs, API endpoints, security configuration, or authentication logic have been implemented
+- No controllers, services, DTOs, API endpoints, security configuration, or authentication logic have been implemented
