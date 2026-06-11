@@ -51,18 +51,24 @@
 * P3.5 Entity ownership mapping defined
 * P3.6 WeddingEventStatus lifecycle approved
 * P3.7 Repositories and persistence integration tests added
+* A4.1 DTO conventions defined
+* A4.2 Validation error handling added
+* A4.3 Domain exception mapping added
+* A4.4 Entity-to-DTO mapping boundaries defined
+* A4.5 API versioning and response conventions added
+* A4.6 Controller-level testing strategy added
 
 ---
 
 ## Current Phase
 
-Spring Boot Backend Development
+Phase 4 - API Foundation
 
 ---
 
 ## Current Task
 
-Repositories and database-gated persistence integration tests added (P3.7); clean MySQL migration verification remains pending (D2.7)
+A4.1-A4.6 API foundation completed; clean MySQL migration verification remains pending (D2.7)
 
 ---
 
@@ -75,7 +81,7 @@ Repositories and database-gated persistence integration tests added (P3.7); clea
 ## Future Tasks
 
 * Authentication
-* Questionnaire APIs
+* Questionnaire CRUD APIs
 * Rule Engine Implementation
 * Gemini Integration
 * Frontend Development

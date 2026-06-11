@@ -8,13 +8,13 @@ main
 
 ## Current Phase
 
-Spring Boot Backend Development
+Phase 4 - API Foundation
 
 ---
 
 ## Current Task
 
-Repositories and database-gated persistence integration tests added (P3.7); clean MySQL migration verification remains pending (D2.7).
+A4.1-A4.6 API foundation completed; clean MySQL migration verification remains pending (D2.7).
 
 ---
 
@@ -49,6 +49,12 @@ Repositories and database-gated persistence integration tests added (P3.7); clea
 * P3.5 Entity ownership mapping defined
 * P3.6 WeddingEventStatus lifecycle approved
 * P3.7 Repositories and persistence integration tests added
+* A4.1 DTO conventions defined
+* A4.2 Validation error handling added
+* A4.3 Domain exception mapping added
+* A4.4 Entity-to-DTO mapping boundaries defined
+* A4.5 API versioning and response conventions added
+* A4.6 Controller-level testing strategy added
 
 ---
 
@@ -71,7 +77,24 @@ Verify migrations against a clean MySQL database (D2.7).
 * Entities created: `User`, `WeddingEvent`, `GeneratedPlan`
 * Wedding event status enum created: `WeddingEventStatus`
 * Repositories created: `UserRepository`, `WeddingEventRepository`, `GeneratedPlanRepository`
-* No controllers, services, DTOs, API endpoints, or authentication implementation created
+* Shared API DTO conventions created under `com.eventmanagement.dto.api`
+* Shared domain exception handling created under `com.eventmanagement.exception`
+* No services, business controllers, questionnaire endpoints, security configuration, or authentication implementation created
+
+---
+
+## API Foundation
+
+* Standard API response envelope: `ApiResponse`
+* Standard API error payload: `ApiError`
+* Field-level validation error payload: `FieldValidationError`
+* API version prefix constant: `ApiRoutes.API_PREFIX` set to `/api/v1`
+* Domain exception base type: `DomainException`
+* Shared domain exceptions: `ResourceNotFoundException`, `InvalidRequestException`
+* Global exception handler maps validation failures and domain exceptions to consistent API responses
+* Entity-to-DTO mapper boundary defined through `EntityDtoMapper`
+* Controller-level testing strategy established with test-only dummy endpoints
+* No questionnaire CRUD endpoints were implemented during API foundation
 
 ---
 
@@ -109,6 +132,7 @@ Verify migrations against a clean MySQL database (D2.7).
 * `GeneratedPlanRepository` supports generated plan persistence and lookup by wedding event
 * Persistence integration tests cover user persistence, event ownership, one-to-one plan mapping, status persistence, and JSON persistence
 * Persistence integration tests require `DB_URL`, `DB_USERNAME`, and `DB_PASSWORD`; they are skipped when those variables are not available
+* API foundation tests cover response envelope, validation error handling, and domain exception mapping
 
 ---
 

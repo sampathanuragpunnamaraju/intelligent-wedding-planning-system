@@ -1,10 +1,10 @@
 # Session Handoff
 
 Current Phase:
-Spring Boot Backend Development
+Phase 4 - API Foundation
 
 Current Task:
-Repositories and database-gated persistence integration tests added (P3.7); clean MySQL migration verification remains pending (D2.7)
+A4.1-A4.6 API foundation completed; clean MySQL migration verification remains pending (D2.7)
 
 Next Task:
 Verify migrations against a clean MySQL database (D2.7)
@@ -36,4 +36,11 @@ Important Notes:
 - Minimal Spring Boot context-load verification exists under the test profile
 - Database conventions are documented in Docs/Database-Conventions.md
 - Clean MySQL migration verification is pending as D2.7
-- No controllers, services, DTOs, API endpoints, security configuration, or authentication logic have been implemented
+- API foundation DTO conventions exist under com.eventmanagement.dto.api
+- API response envelope, error payload, and field validation error payload have been defined
+- API version prefix constant exists as ApiRoutes.API_PREFIX with /api/v1
+- DomainException, ResourceNotFoundException, and InvalidRequestException have been added
+- GlobalExceptionHandler maps validation failures and domain exceptions into standard API responses
+- Entity-to-DTO mapping boundary exists through EntityDtoMapper
+- Controller-level API foundation tests use test-only dummy endpoints
+- No services, business controllers, questionnaire endpoints, security configuration, or authentication logic have been implemented
