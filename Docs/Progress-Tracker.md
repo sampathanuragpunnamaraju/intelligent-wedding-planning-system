@@ -41,6 +41,9 @@
 * D2.1 MySQL connectivity configured through environment variables
 * D2.2 Flyway migration support configured
 * D2.3 Database conventions defined
+* D2.4 GeneratedPlan regeneration semantics confirmed
+* D2.5 AI recommendation storage confirmed
+* D2.6 Initial Flyway schema migration created
 
 ---
 
@@ -52,15 +55,12 @@ Spring Boot Backend Development
 
 ## Current Task
 
-Backend foundation configuration complete (F1.1-F1.6) and database foundation configuration complete (D2.1-D2.3)
+Backend foundation configuration complete (F1.1-F1.6) and initial database schema migration created (D2.1-D2.6)
 
 ---
 
 ## Next Tasks
 
-* Confirm GeneratedPlan regeneration semantics (D2.4)
-* Confirm AI recommendation storage (D2.5)
-* Create the initial schema migration (D2.6)
 * Verify migrations against a clean MySQL database (D2.7)
 * Create User Entity
 * Create WeddingEvent Entity

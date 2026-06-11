@@ -14,7 +14,7 @@ Spring Boot Backend Development
 
 ## Current Task
 
-Backend foundation configuration complete (F1.1-F1.6) and database foundation configuration complete (D2.1-D2.3).
+Backend foundation configuration complete (F1.1-F1.6) and initial database schema migration created (D2.1-D2.6).
 
 ---
 
@@ -39,12 +39,15 @@ Backend foundation configuration complete (F1.1-F1.6) and database foundation co
 * D2.1 MySQL connectivity configured through environment variables
 * D2.2 Flyway migration support configured
 * D2.3 Database conventions defined
+* D2.4 GeneratedPlan regeneration semantics confirmed: update the existing GeneratedPlan
+* D2.5 AI recommendation storage confirmed: store AI output inside GeneratedPlan
+* D2.6 Initial Flyway schema migration created
 
 ---
 
 ## Next Task
 
-Confirm GeneratedPlan regeneration semantics (D2.4).
+Verify migrations against a clean MySQL database (D2.7).
 
 ---
 
@@ -67,10 +70,12 @@ Confirm GeneratedPlan regeneration semantics (D2.4).
 * MySQL connection variables: `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`
 * Future API keys remain environment-based, including `GEMINI_API_KEY`
 * Flyway migration location: `classpath:db/migration`
+* Initial migration: `V1__create_initial_schema.sql`
 * Flyway owns schema changes
 * Hibernate validates the schema and does not create or update it
 * Database conventions are documented in `Docs/Database-Conventions.md`
-* No SQL migrations or database tables have been created
+* Initial schema defines `users`, `wedding_events`, and `generated_plans`
+* Clean MySQL migration verification is pending as D2.7
 
 ---
 
