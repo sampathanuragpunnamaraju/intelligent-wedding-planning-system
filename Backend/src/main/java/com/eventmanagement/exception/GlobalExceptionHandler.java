@@ -58,6 +58,18 @@ public class GlobalExceptionHandler {
 		return ResponseEntity.badRequest().body(ApiResponse.failure(error, request.getRequestURI()));
 	}
 
+	@ExceptionHandler(AuthenticationFailedException.class)
+	public ResponseEntity<ApiResponse<Void>> handleAuthenticationFailure(
+			AuthenticationFailedException exception,
+			HttpServletRequest request
+	) {
+		ApiError error = ApiError.of(exception.getErrorCode(), exception.getMessage());
+
+		return ResponseEntity
+				.status(exception.getStatus())
+				.body(ApiResponse.failure(error, request.getRequestURI()));
+	}
+
 	@ExceptionHandler(DomainException.class)
 	public ResponseEntity<ApiResponse<Void>> handleDomainException(
 			DomainException exception,
