@@ -46,21 +46,25 @@ Task 5
 
 ---
 
-## Phase 3 - Authentication
+## Phase 3 - Authentication Foundation
 
 Task 1
+User Registration
 
-* User Registration
+Status:
+In Progress
 
 Task 2
+User Login
 
-* User Login
+Status:
+In Progress
 
 Task 3
+JWT Authentication
 
-* JWT Authentication
-
----
+Status:
+Foundation Implemented
 
 ## Phase 4 - Questionnaire APIs
 
